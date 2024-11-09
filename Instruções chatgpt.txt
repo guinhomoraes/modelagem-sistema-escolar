@@ -1,0 +1,74 @@
+// tabela de pessoa
+
+tomando como base a tabela abaixo, que é uma tabela de pessoas, gere os script de insert, não precisa adicionar a coluna id, pois a base é mysql:
+create table pessoa
+(
+    id int primary key auto_increment not null,
+    nome varchar(150) not null,
+    rg varchar(20), 
+    cpf varchar(20),
+    endereco text not null,
+    complemento text,
+    bairro varchar(100) not null,
+    cidade varchar(100) not null,
+    estado varchar(100) not null,
+    telefone varchar(20),
+    data_nascimento date not null,
+    status int default 1,
+    observacao text
+);
+
+gere 100 registros
+
+// tabela de escola
+
+tomando como base a tabela abaixo, que é uma tabela de escola, gere os script de insert, não precisa adicionar a coluna id, pois a base é mysql:
+create table escola
+(
+    id int primary key auto_increment not null,
+    razao_social varchar(200) not null,
+    nome_fantasia varchar(200) not null,
+    codigo_escola varchar(20) not null, 
+    cnpj varchar(20) not null,
+    endereco text not null,
+    complemento text,
+    bairro varchar(100) not null,
+    cidade varchar(100) not null,
+    estado varchar(100) not null,
+    telefone varchar(20),
+    data_inauguracao date not null,
+    status int default 1,
+    observacao text
+);
+
+gere 10 registros
+
+// tabela de cargo
+
+tomando como base a tabela abaixo, que é uma tabela de cargo, gere os script de insert, não precisa adicionar a coluna id, pois a base é mysql. Obs: Os cargos devem ser referentes a uma escola, ex: diretor, coordenador, inspetor, recepcionista ....
+
+create table cargo
+(
+    id int primary key auto_increment not null,
+    titulo varchar(100) not null,
+    descricao text not null
+);
+
+
+gere 10 registros
+
+// tabela de aluno
+
+tomando como base a tabela abaixo, que é uma tabela de aluno, gere os script de insert, não precisa adicionar a coluna id, pois a base é mysql. Obs: O campo id_pessoa deve conter valores entre 61 e 120, id_escola deve conter 
+valores entre 1 e 10
+
+create table aluno
+(
+    id int primary key auto_increment not null,
+    registro varchar(20) not null,
+    id_pessoa int not null,
+    id_escola int not null
+);
+
+
+gere 30 registros
