@@ -122,3 +122,42 @@ INSERT INTO aluno (registro, id_pessoa, id_escola) VALUES
 ('ALU028', 88, 8),
 ('ALU029', 89, 9),
 ('ALU030', 90, 10);
+
+//script administrativo
+
+INSERT INTO administrativo (id_pessoa, id_escola, id_cargo) VALUES 
+(61, 1, 1),
+(62, 2, 2),
+(63, 3, 3),
+(64, 4, 4),
+(65, 5, 5),
+(66, 6, 6),
+(67, 7, 7),
+(68, 8, 8),
+(69, 9, 9),
+(70, 10, 1);
+
+
+//script de professor
+
+INSERT INTO professor (id_pessoa, id_escola, registro, salario, status, data_cadastro, observacao, telefone) VALUES 
+(61, 1, 'PROF001', 4500.50, 1, '2024-01-15', 'Professor de Matemática', '(11) 91234-5678'),
+(62, 2, 'PROF002', 4800.75, 1, '2024-02-10', 'Professor de Física', '(21) 92345-6789'),
+(63, 3, 'PROF003', 5000.00, 0, '2024-03-05', 'Professor afastado', '(31) 93456-7890'),
+(64, 4, 'PROF004', 4700.25, 1, '2024-04-20', 'Professor de Português', '(41) 94567-8901'),
+(65, 5, 'PROF005', 5200.00, 1, '2024-05-08', 'Professor de História', '(51) 95678-9012');
+
+// script de turma
+
+INSERT INTO turma (nome, descricao, dt_inicio, dt_termino, status, observacao, id_escola, id_professor) VALUES 
+('Turma A', 'Turma de ensino fundamental', '2024-02-01', '2024-12-15', 1, 'Horário matutino', 1, 1),
+('Turma B', 'Turma de ensino médio', '2024-03-01', '2024-12-20', 1, 'Horário vespertino', 2, 2),
+('Turma C', 'Turma de pré-vestibular', '2024-04-10', '2024-11-30', 1, 'Aulas aos sábados', 3, 3),
+('Turma D', 'Turma de reforço escolar', '2024-01-15', '2024-06-30', 0, 'Aulas de reforço para Matemática', 4, 4),
+('Turma E', 'Turma de inglês básico', '2024-05-05', '2024-09-25', 1, 'Aulas às quartas e sextas', 5, 5),
+('Turma F', 'Turma de ciências', '2024-02-20', '2024-07-15', 0, 'Preparação para olimpíadas científicas', 6, 1),
+('Turma G', 'Turma de redação', '2024-03-10', '2024-10-20', 1, 'Foco em redação para ENEM', 7, 2),
+('Turma H', 'Turma de história', '2024-04-01', '2024-12-10', 1, 'Aulas semanais com projetos históricos', 8, 3),
+('Turma I', 'Turma de geografia', '2024-01-10', '2024-07-30', 0, 'Aulas práticas de cartografia', 9, 4),
+('Turma J', 'Turma de física avançada', '2024-02-25', '2024-08-30', 1, 'Foco em resolução de questões de vestibulares', 10, 5);
+

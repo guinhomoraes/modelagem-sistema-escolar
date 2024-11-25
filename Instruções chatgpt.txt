@@ -72,3 +72,57 @@ create table aluno
 
 
 gere 30 registros
+
+tomando como base a tabela abaixo, que é uma tabela de administrativo, gere os script de insert, não precisa adicionar a coluna id, pois a base é mysql. Obs: O campo id_pessoa deve conter valores entre 61 e 120, id_escola deve conter  
+valores entre 1 e 10 e o campo id_cargo entre 1 a 9 
+
+create table administrativo
+(
+    id int primary key auto_increment not null,
+    id_pessoa int not null,
+    id_escola int not null,
+    id_cargo int not null
+);
+
+gere 10 registros
+
+tomando como base a tabela abaixo, que é uma tabela de professor, gere os script de insert, não precisa adicionar a coluna id, pois a base é mysql. Obs: O campo id_pessoa deve conter valores entre 61 e 120, id_escola deve conter  
+valores entre 1 e 10 
+
+create table professor
+(
+    id int primary key auto_increment not null,
+    id_pessoa int not null,
+    id_escola int not null,
+    registro varchar(20) not null,
+    salario decimal(10,2) not null,
+    status int not null default 1,
+    data_cadastro date not null,
+    observacao text,
+    telefone varchar(20)
+);
+
+gere 5 registros
+
+
+tomando como base a tabela abaixo, que é uma tabela de turma, gere os script de insert, não precisa adicionar a coluna id, pois a base é mysql. Obs: id_escola deve conter  
+valores entre 1 e 10 e id_professor entre 1 a 5
+
+create table turma
+(
+	id int auto_increment primary key not null,
+    nome varchar(100) not null,
+    descricao varchar(200) not null,
+    dt_inicio date,
+    dt_termino date,
+    status int not null default 0,
+    observacao text,
+    id_escola int not null,
+    id_professor int,
+    foreign key(id_escola) references escola(id),
+    foreign key(id_professor) references professor(id)
+);
+
+gere 10 registros
+
+//
