@@ -51,3 +51,63 @@ inner join disciplina as d on d.id = cd.id_disciplina
 where p.registro = 'PROF003'
 and t.status = 1
 order by d.nome asc;
+
+// Visão do Aluno
+
+//Em qual turma eu estou?
+
+select a.registro, p.nome as nome_aluno, t.nome as nome_turma,
+t.descricao
+from aluno_turma as aln 
+inner join aluno as a on a.id = aln.id_aluno
+inner join pessoa as p on p.id = a.id_pessoa
+inner join turma as t on t.id = aln.id_turma
+where a.registro = 'ALU022'
+order by p.nome asc;
+
+//Quais cursos estou vinculado?
+
+select a.registro, p.nome as nome_aluno, c.nome as nome_curso,
+c.descricao
+from aluno_curso as ac
+inner join aluno as a on a.id = ac.id_aluno
+inner join pessoa as p on p.id = a.id_pessoa
+inner join curso as c on c.id = ac.id_curso
+where a.registro = 'ALU022'
+order by p.nome asc;
+
+//Quais disciplinas estou vinculado?
+
+select a.registro, p.nome as nome_aluno,
+d.nome as nome_disciplina, d.descricao
+from aluno_disciplina as ad
+inner join aluno as a on a.id = ad.id_aluno
+inner join pessoa as p on p.id = a.id_pessoa
+inner join disciplina d on d.id = ad.id_disciplina
+where a.registro = 'ALU022'
+order by p.nome asc;
+
+//Quais são minhas notas por curso?
+
+select a.registro, p.nome as nome_aluno, c.nome as nome_curso,
+c.descricao, ac.nota
+from aluno_curso as ac
+inner join aluno as a on a.id = ac.id_aluno
+inner join pessoa as p on p.id = a.id_pessoa
+inner join curso as c on c.id = ac.id_curso
+where a.registro = 'ALU022'
+order by p.nome asc;
+
+//Quais cursos que já fiz?
+
+select a.registro, p.nome as nome_aluno, c.nome as nome_curso,
+c.descricao, ac.progresso
+from aluno_curso as ac
+inner join aluno as a on a.id = ac.id_aluno
+inner join pessoa as p on p.id = a.id_pessoa
+inner join curso as c on c.id = ac.id_curso
+where a.registro = 'ALU006'
+and ac.progresso = 100.00
+order by p.nome asc;
+
+
